@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.fasterxml.jackson.databind.node.TextNode;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import com.github.dockerjava.api.command.InspectContainerResponse;
+import java.time.Duration;
 import lombok.SneakyThrows;
 import org.apache.commons.io.IOUtils;
 import org.testcontainers.containers.BindMode;
@@ -47,7 +48,9 @@ public class K3sContainer extends GenericContainer<K3sContainer> {
         setTmpFsMapping(tmpFsMapping);
 
         setCommand("server", "--disable=traefik", "--tls-san=" + this.getHost());
-        setWaitStrategy(new LogMessageWaitStrategy().withRegEx(".*Node controller sync successful.*"));
+        setWaitStrategy(new LogMessageWaitStrategy()
+            .withRegEx(".*Node controller sync successful.*")
+            .withStartupTimeout(Duration.ofMinutes(5)));
     }
 
     @Override
