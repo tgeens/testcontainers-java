@@ -51,7 +51,8 @@ public class K3sContainer extends GenericContainer<K3sContainer> {
         setWaitStrategy(
             new LogMessageWaitStrategy()
                 .withRegEx(".*Node controller sync successful.*")
-                .withStartupTimeout(Duration.ofMinutes(5)));
+                .withStartupTimeout(Duration.ofMinutes(5))
+        );
     }
 
     @Override
