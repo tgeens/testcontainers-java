@@ -23,9 +23,24 @@ public class OfficialClientK3sContainerTest {
         runK3s(DockerImageName.parse("rancher/k3s:v1.17.17-k3s1"));
     }
 
+    //    @Test
+    //    public void shouldStartAndHaveListableNode_v17() throws IOException, ApiException {
+    //        runK3s(DockerImageName.parse("rancher/k3s:v1.17.17-k3s1"));
+    //    }
+
+    //    @Test
+    //    public void shouldStartAndHaveListableNode_v18() throws IOException, ApiException {
+    //        runK3s(DockerImageName.parse("rancher/k3s:v1.18.20-k3s1"));
+    //    }
+
     @Test
-    public void shouldStartAndHaveListableNode_v17() throws IOException, ApiException {
-        runK3s(DockerImageName.parse("rancher/k3s:v1.17.17-k3s1"));
+    public void shouldStartAndHaveListableNode_v19() throws IOException, ApiException {
+        runK3s(DockerImageName.parse("rancher/k3s:v1.19.16-k3s1"));
+    }
+
+    @Test
+    public void shouldStartAndHaveListableNode_v20() throws IOException, ApiException {
+        runK3s(DockerImageName.parse("rancher/k3s:v1.20.15-k3s1"));
     }
 
     @Test
