@@ -24,8 +24,18 @@ public class OfficialClientK3sContainerTest {
     }
 
     @Test
-    public void shouldStartAndHaveListableNodeUsingLowerVersion() throws IOException, ApiException {
-        runK3s(DockerImageName.parse("rancher/k3s:v1.17.17-k3s1"));
+    public void shouldStartAndHaveListableNodeUsingLowerVersion_v1_18() throws IOException, ApiException {
+        runK3s(DockerImageName.parse("rancher/k3s:v1.18.20-k3s1"));
+    }
+
+    @Test
+    public void shouldStartAndHaveListableNodeUsingLowerVersion_v1_19() throws IOException, ApiException {
+        runK3s(DockerImageName.parse("rancher/k3s:v1.19.16-k3s1"));
+    }
+
+    @Test
+    public void shouldStartAndHaveListableNodeUsingLowerVersion_v1_20() throws IOException, ApiException {
+        runK3s(DockerImageName.parse("rancher/k3s:v1.20.15-k3s1"));
     }
 
     private void runK3s(DockerImageName k3sDockerImage) throws IOException, ApiException {
