@@ -43,10 +43,10 @@ public class OfficialClientK3sContainerTest {
         runK3s(DockerImageName.parse("rancher/k3s:v1.28.2-k3s1"));
     }
 
-//    @Test
-//    public void shouldStartAndHaveListableNodeUsingLowerVersion() throws IOException, ApiException {
-//        runK3s(DockerImageName.parse("rancher/k3s:v1.18.20-k3s1"));
-//    }
+    //    @Test
+    //    public void shouldStartAndHaveListableNodeUsingLowerVersion() throws IOException, ApiException {
+    //        runK3s(DockerImageName.parse("rancher/k3s:v1.18.20-k3s1"));
+    //    }
 
     private void runK3s(DockerImageName k3sDockerImage) throws IOException, ApiException {
         try (K3sContainer k3s = new K3sContainer(k3sDockerImage).withLogConsumer(new Slf4jLogConsumer(log))) {
